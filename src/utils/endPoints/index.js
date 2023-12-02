@@ -1,0 +1,5 @@
+export const LIST = '/list'
+export const DELETE = '/delete'
+export const EDIT = '/edit'
+export const ADD = '/add'
+export const SEARCH = '/person'
