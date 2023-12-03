@@ -1,12 +1,11 @@
 import '@/styles/globals.css'
 import { Provider } from 'react-redux'
-import store from '@/redux/store/store'
+import store from '@/ReduxToolkit/store'
 
 export default function App({ Component, pageProps }) {
-  return(
+  return (
     <Provider store={store}>
       <Component {...pageProps} />
     </Provider>
-    
-  ) 
+  )
 }

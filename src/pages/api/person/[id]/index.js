@@ -6,6 +6,7 @@ export default function handlerParams(req, res) {
     if (req.method === 'GET') {
         //Obtenemos el id desde query
         const { id } = req.query
+
         //Si el id es positivo procedemos a buscarlo en nuestro registro, de lo contrario retornamos un error
         if (id) {
             const filtrado = registros.filter(p => p.id.startsWith(id))

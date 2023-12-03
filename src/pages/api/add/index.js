@@ -5,12 +5,21 @@ export default function handlerDelete(req, res) {
     //Verificamos si el metodo ingresado es el correcto
     if (req.method === 'POST') {
         //Obtemos el nuevo registro por body
-        //y lo convertimos de JSON a un dato JS
-        const newPerson = JSON.parse(req.body)
-        //lo guardamos al principio de nuestro array
-        registros.unshift(newPerson)
-
-        res.status(200).json(registros)
+        const body = req.body
+        //verificamos que los datos traidos de body sean un objeto
+        if (typeof body === 'object') {
+            //destructuramos nuestro body
+            const { nombre, correo, direccion } = body
+            //verificamos que los datos esten completos y de no ser asi, retornar un error
+            if (!nombre || !correo || !direccion) {
+                res.status(405).json('Faltan datos')
+            }
+            //en caso que los datos esten completos
+            //lo guardamos al principio de nuestro array y le agregamos un id
+            const newPerson = { id: `${registros.length + 1}`, ...body }
+            registros.unshift(newPerson)
+            res.status(200).json(registros)
+        }
     } else {
         res.status(405).json({ error: 'metodo invalido' })
     }

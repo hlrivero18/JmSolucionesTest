@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useState } from "react";
-import Form from "../Form/Form";
+import Form from "../Form/add/Form";
 
 export default function Add() {
     const [formActive, setFormActive] = useState(false)

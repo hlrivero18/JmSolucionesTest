@@ -1,4 +1,4 @@
-const registro = [{
+let registro = [{
     "id": "1",
     "nombre": "Juan Pérez",
     "correo": "juan@example.com",
