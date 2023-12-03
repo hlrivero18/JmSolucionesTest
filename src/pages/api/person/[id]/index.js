@@ -1,5 +1,5 @@
 //importamos el archivo db.js donde estan nuestros registros para ser filtrados
-const registros = require('../../../../utils/DB/db')
+let registros = require('../../../../utils/DB/db')
 
 export default function handlerParams(req, res) {
     //Verificamos si el metodo ingresado es el correcto
