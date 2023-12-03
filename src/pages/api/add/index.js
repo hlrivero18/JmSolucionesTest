@@ -18,7 +18,8 @@ export default function handlerDelete(req, res) {
             //lo guardamos al principio de nuestro array y le agregamos un id
             const newPerson = { id: `${registros.length + 1}`, ...body }
             registros.unshift(newPerson)
-            res.status(200).json(registros)
+            //retornamos el nuevo registro para ser agregado al redux
+            res.status(200).json(newPerson)
         }
     } else {
         res.status(405).json({ error: 'metodo invalido' })

@@ -8,10 +8,11 @@ export default function handlerDelete(req, res) {
         const { id } = req.query
 
         if (id) {
+            const eliminado = registros.find(p => p.id === id)
             //filtramos el registro para eliminar el id que obtuvimos en query
             registros = registros.filter(p => p.id !== id)
-            // registros = newRegistro
-            res.status(200).json(registros)
+            //retornamos el registro eliminado para identificarlo y sacarlo en el redux
+            res.status(200).json(eliminado)
         }
     } else {
         res.status(404).json({ error: 'metodo invalido' })

@@ -1,40 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Proyecto React CRUD
 
-## Getting Started
+Este proyecto es un CRUD básico desarrollado en React, utilizando Next.js como framework principal. El objetivo es mostrar una tabla paginada con funciones CRUD, un formulario para agregar y editar elementos, y diversas características modernas de desarrollo en React.
 
-First, run the development server:
+## Requisitos del Sistema
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Asegúrate de tener Node.js y npm instalados en tu máquina antes de ejecutar el proyecto.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalación
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. Clona el repositorio desde GitHub:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+   ```bash
+   git clone https://github.com/tu-usuario/react-crud-proyecto.git
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. Navega al  directorio del proyecto:
+    ```bash
+    cd JmSolucionesTest
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Instala las dependencias:
+    ```bash
+    npm install
 
-## Learn More
+## Estructura del Proyecto
 
-To learn more about Next.js, take a look at the following resources:
+- /src: Contiene el código fuente del proyecto.
+   -  /components: Componentes reutilizables.
+    - /pages: Páginas de Next.js.
+    - /ReduxToolkit: Configuración de Redux.
+    - /styles: Estilos personalizados.
+    - /utils: Utilidades y funciones útiles.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Comandos Útiles:
+- Iniciar el proyecto: ``` npm run dev ```
+- Ejecutar Pruebas Binarias: ``` npm test```
+- Realizar el build del proyecto: ``` npm run build```
+- Desplegar el proyecto: ``` npm start```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+ ## Visualización en Línea
+-  El proyecto está desplegado en  Puedes acceder a él [aquí](https://jm-soluciones-test.vercel.app/.)
 
-## Deploy on Vercel
+ ## Contribuciones
+- Siéntete libre de contribuir al proyecto abriendo problemas (issues) o enviando solicitudes de extracción (pull requests).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*¡Gracias por revisar el proyecto! Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto.*
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Hecho con ❤️ por Hector Luis Rivero!**
+

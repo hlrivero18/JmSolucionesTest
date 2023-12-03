@@ -1,20 +1,21 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getPersonId } from "@/ReduxToolkit/actions/getPersonByID";
-
+import { searchPersonByID } from "@/ReduxToolkit/actions/searchPerson";
+//componente buscador
 export default function Search() {
-
+    //en este estado se almacenara los id que vayamos escribiendo
     const [id, setId] = useState('')
     const dispatch = useDispatch()
-
+    // esta funcion se encarga de cargar lo que se escribe en el estado local
     const handlerchange = (e) => {
         const { value } = e.target
         setId(value)
     }
    
     useEffect(() => {
-        dispatch(getPersonId(id))
+        //esta funcion hace una busqueda por id cada vez que detecta un cambio en el input
+          dispatch(searchPersonByID(id))  
     }, [id])
 
     return (

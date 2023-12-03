@@ -1,20 +1,20 @@
 'use client'
+//este es el formulario para crear un registro para nuestra tabla
 import React, { useState } from "react";
 import validation from "@/utils/validation";
 import { addPerson } from "@/ReduxToolkit/actions/addPerson";
 import { useDispatch } from "react-redux";
 
 export default function Form({ setFormActive }) {
+    const dispath = useDispatch()
     //en este estado se ira almacenando todo lo que se vaya escribriendo en el formulario
     const [person, setPerson] = useState({
         nombre: '',
         correo: '',
         direccion: ''
     })
-
+    //en este estado se ira almacenando los errores que tenga el formulario
     const [error, setError] = useState({})
-
-    const dispath = useDispatch()
     //esta funcion se encargara de detectar los cambios del formulario
     //y almacenarlos en el estado local.
     const handleChange = (e) => {
@@ -23,7 +23,7 @@ export default function Form({ setFormActive }) {
         setPerson(newPerson)
         setError(validation(newPerson))
     }
-
+    //esta funcion se encarga de ver si no hay errores y asi poder enviar la solicitud a nuestro registro
     const handleClick = (e) => {
         e.preventDefault();
         if (Object.keys(error).length === 0) {
@@ -52,21 +52,21 @@ export default function Form({ setFormActive }) {
                     <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre y apellido</label>
                     {error.nombre && <span className="text-xs text-red-500 fixed self-end">{error.nombre}</span>}
                 </div>
-                <div class="relative z-0 w-full mb-5 group pb-3">
+                <div className="relative z-0 w-full mb-5 group pb-3">
                     <input type="email" name="correo"
                         value={person.correo} onChange={handleChange}
-                        id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+                        id="floating_email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
                     {error.correo && <span className="text-xs text-red-500 fixed self-end">{error.correo}</span>}
                 </div>
-                <div class="relative z-0 w-full mb-5 group pb-3">
+                <div className="relative z-0 w-full mb-5 group pb-3">
                     <input type="text" name="direccion"
                         value={person.direccion} onChange={handleChange}
-                        id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Direccion</label>
+                        id="floating_email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Direccion</label>
                     {error.direccion && <span className="text-xs text-red-500 fixed self-end">{error.direccion}</span>}
                 </div>
-                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar</button>
+                <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar</button>
             </form>
         </div>
 

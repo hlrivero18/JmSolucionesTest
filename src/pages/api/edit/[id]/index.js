@@ -16,7 +16,8 @@ export default function handlerEdit(req, res) {
             if (index !== -1) {
                 // luego reemplazamos el registro que queremos editar con el nuevo y retornamos
                 registros[index] = { id, ...body }
-                res.status(200).json(registros)
+                // y retornamos el registro editado
+                res.status(200).json(registros[index])
             }else {
                 res.status(404).json({ error: 'No se encontró ningún registro con el ID proporcionado' });
             }
