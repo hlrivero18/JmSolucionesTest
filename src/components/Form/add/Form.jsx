@@ -36,7 +36,7 @@ export default function Form({ setFormActive }) {
     }
 
     return (
-        <div className="z-50 fixed top-0 left-0 w-full h-screen bg-black bg-opacity-75 grid place-items-center">
+        <div className="animate-fade-up animate-once z-50 fixed top-0 left-0 w-full h-screen bg-black bg-opacity-75 grid place-items-center">
             
             <form onSubmit={handleClick} className="w-96 max-w-md mx-auto h-auto fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-90  items-center z-50 rounded-lg border border-black p-7 dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 dark:text-white">
                 <button onClick={() => { setFormActive() }} type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto grid justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="staticModal">

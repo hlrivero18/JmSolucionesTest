@@ -1,0 +1,26 @@
+.sub {
+    overflow: hidden;
+    border: none;
+    color: #fff;
+    background: none;
+    position: relative;
+    padding-bottom: 0.3em;
+}
+
+.sub:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background: currentColor;
+    transition: transform 0.25s ease-out;
+}
+
+.sub:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

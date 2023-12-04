@@ -22,7 +22,14 @@ export default function Tables() {
         <div className="relative overflow-x-auto">
             {/* Instanciamos el componente paginador al cual le pasamos
             el array con todos los registros a mostrar y cuantos elementos por pagina queremos */}
+            {registro.length > 0 ? 
             <PaginatedTable data={registro} itemsPerPage={7} />
+            :
+            <div className="h-48 w-64 bg-blue-500 m-auto rounded-lg grid place-content-center">
+                <h1 className="m-auto text-white">Cargando...</h1>
+            </div>
+        }
+            
         </div>
     )
 }
