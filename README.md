@@ -36,6 +36,15 @@ Asegúrate de tener Node.js y npm instalados en tu máquina antes de ejecutar el
 - Realizar el build del proyecto: ``` npm run build```
 - Desplegar el proyecto: ``` npm start```
 
+## Subida a GitHub:
+- Subir todos los cambios: ````git add .```
+- Hacer un commit antes de subir: ```git commit -m 'subida'```
+- Pushear los cambio: ```git push```
+- Cambiar de rama: ```git checkout [nombre de la rama]```
+- actualizar la rama destino: ```git pull origin [rama destino]```
+- Unir cambios de una rama A a una rama B: ```git merge B```
+-
+
  ## Visualización en Línea
 -  El proyecto está desplegado en  Puedes acceder a él [aquí](https://jm-soluciones-test.vercel.app/.)
 
